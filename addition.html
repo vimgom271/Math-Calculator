@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Addition</title>
+</head>
+<link rel="stylesheet" href="style.css">
+
+<body>
+    <h1>Select your addend</h1>
+    <input type="number" id="num1">
+
+    <h1>Select your other addend</h1>
+    <input type="number" id="num2">
+
+    <br><br>
+    <button onclick="addNumbers()">Add</button>
+
+    <h1>Answer</h1>
+    <p id="result">Result will appear here</p>
+
+    <script>
+        function addNumbers() {
+            // Get values from input fields
+            var a = parseFloat(document.getElementById("num1").value);
+            var b = parseFloat(document.getElementById("num2").value);
+
+            // Check for valid input
+            if (isNaN(a) || isNaN(b)) {
+                document.getElementById("result").innerText = "Please enter both numbers.";
+            } else {
+                // Add numbers and show result
+                var sum = a + b;
+                document.getElementById("result").innerText = sum;
+            }
+        }
+    </script>
+</body>
+</html>
